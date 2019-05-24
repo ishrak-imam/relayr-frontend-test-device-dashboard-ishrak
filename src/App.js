@@ -1,11 +1,10 @@
 import React from 'react'
+import Device from './Device'
 
 function App () {
   return (
     <div>
-      <h1>Relayr Device Dashboard</h1>
-      <p>Feel free to implement UI the way you like.</p>
-      <p>You can write styles in ./styles.css.</p>
+      <Device />
     </div>
   )
 }
