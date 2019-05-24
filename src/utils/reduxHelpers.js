@@ -22,3 +22,10 @@ export const createAction = type => {
 export const updateObject = (object, values) => {
   return { ...object, ...values }
 }
+
+export const updateObjectInList = (list, object, identifier, value) => {
+  return list.map(item => {
+    if (item[identifier] !== value) return item
+    return updateObject(item, object)
+  })
+}

@@ -1,5 +1,5 @@
 
-import { DEVICE_INITIAL_STATE } from '../Device/initialState'
+import { DEVICE_INITIAL_STATE } from '../DeviceList/initialState'
 
 export const getInitialState = () => {
   return {

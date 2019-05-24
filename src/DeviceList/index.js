@@ -2,12 +2,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDevice } from './selector'
-import { deviceListReq } from './action'
+import { deviceListReq, devicePatchReq } from './action'
 import { listFilter } from '../utils/helpers'
 
 import Device from '../components/device'
 import ActiveCounter from '../components/activeCounter'
 import Search from '../components/search'
+
+import './style.css'
 
 class DeviceList extends Component {
   constructor (props) {
@@ -16,10 +18,15 @@ class DeviceList extends Component {
       query: ''
     }
     this._onSearch = this._onSearch.bind(this)
+    this._onStateChange = this._onStateChange.bind(this)
   }
 
   _onSearch (query) {
     this.setState({ query })
+  }
+
+  _onStateChange (readingName, stateValue) {
+    this.props.patchDevice(readingName, stateValue)
   }
 
   componentDidMount () {
@@ -33,7 +40,7 @@ class DeviceList extends Component {
     data = query ? listFilter(data, query, 'name') : data
 
     return (
-      <div className='reactjs-app'>
+      <div>
         <h2>Device List</h2>
         <hr />
         <Search onSearch={this._onSearch} />
@@ -42,7 +49,7 @@ class DeviceList extends Component {
         <hr />
         {
           data.map((device, index) => {
-            return <Device key={index} device={device} />
+            return <Device key={index} device={device} onStateChange={this._onStateChange} />
           })
         }
       </div>
@@ -55,7 +62,8 @@ const stateToProps = state => ({
 })
 
 const dispatchToProps = dispatch => ({
-  getDeviceList: () => dispatch(deviceListReq())
+  getDeviceList: () => dispatch(deviceListReq()),
+  patchDevice: (readingName, stateValue) => dispatch(devicePatchReq({ readingName, stateValue }))
 })
 
 export default connect(stateToProps, dispatchToProps)(DeviceList)

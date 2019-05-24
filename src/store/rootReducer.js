@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import * as device from '../Device/reducer'
+import * as device from '../DeviceList/reducer'
 
 const rootReducer = combineReducers({
   ...device

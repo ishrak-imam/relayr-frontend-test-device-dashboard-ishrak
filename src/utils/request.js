@@ -22,7 +22,7 @@ const errorHandler = error => {
 
 const responseHandler = response => {
   if (response.status === 200) return response.json()
-  if (response.status === 400) return Promise.reject()
+  if (response.status === 400) return Promise.reject(response.statusText)
 }
 
 const createFetchPromise = (method, endPoint, data, headers) => {

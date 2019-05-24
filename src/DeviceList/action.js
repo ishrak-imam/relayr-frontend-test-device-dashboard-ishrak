@@ -15,4 +15,4 @@ export const deviceListFail = createAction(DEVICE_LIST_FAIL)
 
 export const devicePatchReq = createAction(DEVICE_PATCH_REQ)
 export const devicePatchSucs = createAction(DEVICE_PATCH_SUCS)
-export const devicePatchFail = createAction(DEVICE_LIST_FAIL)
+export const devicePatchFail = createAction(DEVICE_PATCH_FAIL)
