@@ -6,6 +6,7 @@ import { deviceListReq } from './action'
 import { listFilter } from '../utils/helpers'
 
 import Device from '../components/device'
+import ActiveCounter from '../components/activeCounter'
 import Search from '../components/search'
 
 class DeviceList extends Component {
@@ -36,6 +37,8 @@ class DeviceList extends Component {
         <h2>Device List</h2>
         <hr />
         <Search onSearch={this._onSearch} />
+        <hr />
+        <ActiveCounter data={data} />
         <hr />
         {
           data.map((device, index) => {

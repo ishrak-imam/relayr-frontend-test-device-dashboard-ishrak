@@ -1,10 +1,10 @@
 import React from 'react'
-import Device from './DeviceList'
+import DeviceList from './DeviceList'
 
 function App () {
   return (
     <div>
-      <Device />
+      <DeviceList />
     </div>
   )
 }
