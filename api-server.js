@@ -1,6 +1,6 @@
 const restify = require('restify')
 const corsMiddleware = require('restify-cors-middleware')
-const ip_addr = '127.0.0.1'
+const ip = '127.0.0.1'
 const port = '8888'
 
 var server = restify.createServer()
@@ -127,6 +127,6 @@ function patchDeviceReading (req, res, next) {
   };
 }
 
-server.listen(port, ip_addr, function () {
+server.listen(port, ip, function () {
   console.log('%s listening at %s ', server.name, server.url)
 })
