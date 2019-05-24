@@ -1,5 +1,6 @@
 import React from 'react'
-import Device from './Device'
+import Device from './DeviceList'
+import './App.css'
 
 function App () {
   return (
