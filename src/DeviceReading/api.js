@@ -1,7 +1,7 @@
 
 import { getRequest, patchRequest } from '../utils/request'
 
-export const getDeviceList = () => {
+export const getDeviceReading = () => {
   return getRequest('/device')
 }
 

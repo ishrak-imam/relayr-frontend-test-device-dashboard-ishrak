@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDevice } from './selector'
-import { deviceListReq, devicePatchReq } from './action'
+import { deviceReadingReq, devicePatchReq } from './action'
 import { listFilterByString } from '../utils/helpers'
 
 import Device from '../components/device'
@@ -11,7 +11,7 @@ import Search from '../components/search'
 
 import './style.css'
 
-class DeviceList extends Component {
+class DeviceReading extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -30,7 +30,7 @@ class DeviceList extends Component {
   }
 
   componentDidMount () {
-    this.props.getDeviceList({})
+    this.props.getDeviceReading({})
   }
 
   render () {
@@ -64,8 +64,8 @@ const stateToProps = state => ({
 })
 
 const dispatchToProps = dispatch => ({
-  getDeviceList: () => dispatch(deviceListReq()),
+  getDeviceReading: () => dispatch(deviceReadingReq()),
   patchDevice: (readingName, stateValue) => dispatch(devicePatchReq({ readingName, stateValue }))
 })
 
-export default connect(stateToProps, dispatchToProps)(DeviceList)
+export default connect(stateToProps, dispatchToProps)(DeviceReading)

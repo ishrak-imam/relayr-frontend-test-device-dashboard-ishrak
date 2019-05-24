@@ -1,6 +1,6 @@
 import { fork, all } from 'redux-saga/effects'
 
-import * as deviceSaga from '../DeviceList/saga'
+import * as deviceSaga from '../DeviceReading/saga'
 import * as toastSaga from '../Toast/saga'
 
 const sagas = {

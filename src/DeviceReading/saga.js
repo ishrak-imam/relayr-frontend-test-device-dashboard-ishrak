@@ -1,19 +1,19 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { takeFirst } from '../utils/sagaHelpers'
 import {
-  deviceListReq,
-  deviceListSucs,
-  deviceListFail,
+  deviceReadingReq,
+  deviceReadingSucs,
+  deviceReadingFail,
 
   devicePatchReq,
   devicePatchSucs,
   devicePatchFail
 } from './action'
 
-import { getDeviceList, patchDevice } from './api'
+import { getDeviceReading, patchDevice } from './api'
 
-export function * watchDeviceListReq () {
-  yield takeFirst(deviceListReq.getType(), workerDeviceListReq)
+export function * watchDeviceReadingReq () {
+  yield takeFirst(deviceReadingReq.getType(), workerDeviceReadingReq)
 }
 
 function formatData (list) {
@@ -23,12 +23,12 @@ function formatData (list) {
   })
 }
 
-function * workerDeviceListReq (action) {
+function * workerDeviceReadingReq (action) {
   try {
-    const { data } = yield call(getDeviceList)
-    yield put(deviceListSucs({ data: formatData(data) }))
+    const { data } = yield call(getDeviceReading)
+    yield put(deviceReadingSucs({ data: formatData(data) }))
   } catch (e) {
-    yield put(deviceListFail())
+    yield put(deviceReadingFail())
   }
 }
 
