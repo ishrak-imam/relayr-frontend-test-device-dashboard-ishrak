@@ -4,9 +4,10 @@ import { format } from 'date-fns'
 import Spinner from './spinner'
 
 export default class Device extends Component {
-  // shouldComponentUpdate (nextProps) {
-  //   return nextProps.device.loading !== this.props.device.loading
-  // }
+  shouldComponentUpdate (nextProps) {
+    return nextProps.device.loading !== this.props.device.loading ||
+            nextProps.device.name !== this.props.device.name
+  }
 
   render () {
     const { name, value, unit, timestamp, active, loading } = this.props.device

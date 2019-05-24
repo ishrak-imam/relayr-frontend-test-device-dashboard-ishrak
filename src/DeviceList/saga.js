@@ -42,6 +42,6 @@ function * workerDevicePatchReq (action) {
     yield call(patchDevice, readingName, stateValue)
     yield put(devicePatchSucs({ readingName, stateValue }))
   } catch (e) {
-    yield put(devicePatchFail({ readingName }))
+    yield put(devicePatchFail({ readingName, toast: { text: e, type: 'ERROR' } }))
   }
 }

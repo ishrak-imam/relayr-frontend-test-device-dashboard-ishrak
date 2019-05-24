@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDevice } from './selector'
 import { deviceListReq, devicePatchReq } from './action'
-import { listFilter } from '../utils/helpers'
+import { listFilterByString } from '../utils/helpers'
 
 import Device from '../components/device'
 import ActiveCounter from '../components/activeCounter'
@@ -37,21 +37,23 @@ class DeviceList extends Component {
     const { query } = this.state
     let { device: { data } } = this.props
 
-    data = query ? listFilter(data, query, 'name') : data
+    data = query ? listFilterByString(data, query, 'name') : data
 
     return (
-      <div>
+      <div className='container'>
         <h2>Device List</h2>
         <hr />
         <Search onSearch={this._onSearch} />
         <hr />
         <ActiveCounter data={data} />
         <hr />
-        {
-          data.map((device, index) => {
-            return <Device key={index} device={device} onStateChange={this._onStateChange} />
-          })
-        }
+        {data.map(device =>
+          <Device
+            key={device.name}
+            device={device}
+            onStateChange={this._onStateChange}
+          />
+        )}
       </div>
     )
   }
