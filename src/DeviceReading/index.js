@@ -5,7 +5,7 @@ import { getDevice } from './selector'
 import { deviceReadingReq, devicePatchReq } from './action'
 import { listFilterByString } from '../utils/helpers'
 
-import Device from '../components/device'
+import Reading from '../components/reading'
 import ActiveCounter from '../components/activeCounter'
 import Search from '../components/search'
 
@@ -41,14 +41,14 @@ class DeviceReading extends Component {
 
     return (
       <div className='container'>
-        <h2>Device List</h2>
+        <h2>Device Dashboard</h2>
         <hr />
         <Search onSearch={this._onSearch} />
         <hr />
         <ActiveCounter data={data} />
         <hr />
         {data.map(device =>
-          <Device
+          <Reading
             key={device.name}
             device={device}
             onStateChange={this._onStateChange}
