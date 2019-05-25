@@ -30,7 +30,7 @@ class Search extends Component {
             <input
               onChange={event => this._onChangeText(event.target.value)}
               value={this.state.text}
-              type='text' placeholder='Search Device'
+              type='text' placeholder='Search Reading'
               className='form-control form-control-lg' />
           </div>
         </div>

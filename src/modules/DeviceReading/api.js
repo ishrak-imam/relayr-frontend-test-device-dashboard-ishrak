@@ -1,5 +1,5 @@
 
-import { getRequest, patchRequest } from '../utils/request'
+import { getRequest, patchRequest } from '../../utils/request'
 
 export const getDeviceReading = () => {
   return getRequest('/device')

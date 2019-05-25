@@ -4,8 +4,6 @@ import { createStore, applyMiddleware } from 'redux'
 import { getInitialState } from '../utils/initialState'
 import rootReducer from './rootReducer'
 
-import logger from '../middlewares/logger'
-
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './rootSaga'
 import Middlewares from '../middlewares'

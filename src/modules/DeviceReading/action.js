@@ -1,5 +1,5 @@
 
-import { createAction } from '../utils/reduxHelpers'
+import { createAction } from '../../utils/reduxHelpers'
 
 export const DEVICE_READING_REQ = 'DEVICE_READING_REQ'
 export const DEVICE_READING_SUCS = 'DEVICE_READING_SUCS'

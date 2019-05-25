@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { takeFirst } from '../utils/sagaHelpers'
+import { takeFirst } from '../../utils/sagaHelpers'
 import {
   deviceReadingReq,
   deviceReadingSucs,

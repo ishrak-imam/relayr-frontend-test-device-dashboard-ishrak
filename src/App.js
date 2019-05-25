@@ -1,5 +1,5 @@
 import React from 'react'
-import DeviceReading from './DeviceReading'
+import DeviceReading from './modules/DeviceReading'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'

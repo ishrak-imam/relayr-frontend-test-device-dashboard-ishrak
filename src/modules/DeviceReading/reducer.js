@@ -1,5 +1,5 @@
 
-import { createReducer, updateObject, updateObjectInList } from '../utils/reduxHelpers'
+import { createReducer, updateObject, updateObjectInList } from '../../utils/reduxHelpers'
 
 import {
   DEVICE_READING_REQ,

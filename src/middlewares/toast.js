@@ -1,5 +1,5 @@
 
-import { showToast } from '../Toast/action'
+import { showToast } from '../modules/Toast/action'
 
 const toast = store => next => action => {
   const result = next(action)
